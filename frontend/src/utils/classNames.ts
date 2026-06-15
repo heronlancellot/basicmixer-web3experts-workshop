@@ -13,7 +13,7 @@ export function cn(...classes: (string | boolean | undefined | null)[]): string 
 export const buttonVariants = {
   primary: 'btn-primary',
   secondary: 'btn-secondary',
-  ghost: 'px-4 py-2 text-[#00FFB3] hover:bg-[#00D395]/10 transition-all duration-200',
+  ghost: 'px-4 py-2 text-white hover:bg-white/5 transition-all duration-200',
 } as const
 
 /**

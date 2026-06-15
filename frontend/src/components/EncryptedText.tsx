@@ -34,7 +34,7 @@ export function EncryptedText({ text, className }: { text: string, className?: s
     }, [text])
 
     return (
-        <span className={cn("font-bold text-[#00FFB3] tracking-wide", className)}>
+        <span className={cn("font-bold text-white tracking-wide", className)}>
             {display}
         </span>
     )

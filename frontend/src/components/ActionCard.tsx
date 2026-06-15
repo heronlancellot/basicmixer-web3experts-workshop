@@ -27,8 +27,8 @@ const ConnectWalletPrompt = memo(function ConnectWalletPrompt() {
 
   return (
     <div className="card w-full p-6 sm:p-8 flex flex-col items-center gap-4 text-center">
-      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#00D395]/10">
-        <Icon name="user" size={28} color="#00FFB3" />
+      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#ffffff]/10">
+        <Icon name="user" size={28} color="#ffffff" />
       </div>
       <div className="flex flex-col gap-2">
         <h3 className="text-[18px] sm:text-[20px] font-bold">Connect Your Wallet</h3>

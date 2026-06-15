@@ -29,7 +29,7 @@ export const StatusItem = ({ value, label }: StatItemProps) => {
                 */}
                 <span
                     className={`
-                        text-[28px] sm:text-[34px] font-bold text-[#00FFB3] leading-none 
+                        text-[28px] sm:text-[34px] font-bold text-white leading-none 
                         text-center text-wrap break-words w-full px-2
                         transition-opacity duration-500 ease-in-out
                         ${showValue && value !== undefined ? "opacity-100" : "opacity-0"}

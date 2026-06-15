@@ -22,7 +22,7 @@ const SectionCard = memo(function SectionCard({
     <div className={`relative ${className}`}>
       {/* Icon & Header */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#00FFB3]/10 flex-shrink-0">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#ffffff]/10 flex-shrink-0">
           {icon}
         </div>
         <div>
@@ -30,7 +30,7 @@ const SectionCard = memo(function SectionCard({
             {title}
           </h3>
           {subtitle && (
-            <p className="text-[13px] text-[#00FFB3] font-medium mt-0.5">
+            <p className="text-[13px] text-[#ffffff] font-medium mt-0.5">
               {subtitle}
             </p>
           )}
@@ -59,8 +59,8 @@ const RoadmapItem = memo(function RoadmapItem({
   description
 }: RoadmapItemProps) {
   const statusConfig = {
-    completed: { color: '#00FFB3', label: 'Completed' },
-    'in-progress': { color: '#00D395', label: 'In Progress' },
+    completed: { color: '#ffffff', label: 'Completed' },
+    'in-progress': { color: '#b0b0b0', label: 'In Progress' },
     upcoming: { color: '#666666', label: 'Upcoming' }
   }
 
@@ -107,8 +107,8 @@ export const About = memo(function About() {
         {/* Hero Header */}
         <div className="flex flex-col gap-4 items-center text-center">
           <div className="flex items-center gap-2">
-            <Icon name="shield" size={16} color="#00FFB3" />
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#00FFB3]">
+            <Icon name="shield" size={16} color="#ffffff" />
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#ffffff]">
               About
             </span>
           </div>
@@ -160,7 +160,7 @@ export const About = memo(function About() {
         {/* Solution Section */}
         <div className="border-l-2 border-white/10 pl-6 sm:pl-8">
           <SectionCard
-            icon={<Icon name="shield" size={24} color="#00FFB3" />}
+            icon={<Icon name="shield" size={24} color="#ffffff" />}
             title="The Solution"
             subtitle="Privacy by Zero-Knowledge Proofs"
           >
@@ -172,7 +172,7 @@ export const About = memo(function About() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                <div className="p-4 rounded-xl bg-[#00FFB3]/5 border border-[#00FFB3]/10">
+                <div className="p-4 rounded-xl bg-[#ffffff]/5 border border-[#ffffff]/10">
                   <h4 className="text-[14px] font-semibold text-white mb-2">
                     Zero-Knowledge Proofs
                   </h4>
@@ -181,7 +181,7 @@ export const About = memo(function About() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#00FFB3]/5 border border-[#00FFB3]/10">
+                <div className="p-4 rounded-xl bg-[#ffffff]/5 border border-[#ffffff]/10">
                   <h4 className="text-[14px] font-semibold text-white mb-2">
                     Merkle Tree Storage
                   </h4>
@@ -190,7 +190,7 @@ export const About = memo(function About() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#00FFB3]/5 border border-[#00FFB3]/10">
+                <div className="p-4 rounded-xl bg-[#ffffff]/5 border border-[#ffffff]/10">
                   <h4 className="text-[14px] font-semibold text-white mb-2">
                     Fixed Denominations
                   </h4>
@@ -199,7 +199,7 @@ export const About = memo(function About() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#00FFB3]/5 border border-[#00FFB3]/10">
+                <div className="p-4 rounded-xl bg-[#ffffff]/5 border border-[#ffffff]/10">
                   <h4 className="text-[14px] font-semibold text-white mb-2">
                     Nullifier System
                   </h4>
@@ -220,7 +220,7 @@ export const About = memo(function About() {
         {/* Business Model Section */}
         <div className="border-l-2 border-white/10 pl-6 sm:pl-8">
           <SectionCard
-            icon={<Icon name="lock" size={24} color="#00D395" />}
+            icon={<Icon name="lock" size={24} color="#b0b0b0" />}
             title="Business Model"
             subtitle="Sustainable & Transparent"
           >
@@ -230,12 +230,12 @@ export const About = memo(function About() {
                 The full deposit amount is returned on withdrawal.
               </p>
 
-              <div className="p-5 rounded-xl bg-[#00D395]/5 border border-[#00D395]/15">
+              <div className="p-5 rounded-xl bg-[#b0b0b0]/5 border border-[#b0b0b0]/15">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[14px] font-semibold text-white">
                     Denomination
                   </span>
-                  <span className="text-[18px] font-bold text-[#00FFB3]">
+                  <span className="text-[18px] font-bold text-[#ffffff]">
                     0.001 ETH
                   </span>
                 </div>
@@ -264,7 +264,7 @@ export const About = memo(function About() {
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#00FFB3] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff] mt-2 flex-shrink-0" />
                     <div>
                       <h4 className="text-[13px] font-semibold text-white">
                         {item.title}
@@ -283,7 +283,7 @@ export const About = memo(function About() {
         {/* Roadmap Section */}
         <div className="border-l-2 border-white/10 pl-6 sm:pl-8">
           <SectionCard
-            icon={<Icon name="document" size={24} color="#00D395" />}
+            icon={<Icon name="document" size={24} color="#b0b0b0" />}
             title="Roadmap"
             subtitle="Building Privacy Infrastructure"
             className="pb-0"
@@ -334,7 +334,7 @@ export const About = memo(function About() {
           </p>
           <a
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00FFB3] to-[#00D395] text-[#0a0a0a] font-semibold text-[14px] hover:shadow-lg hover:shadow-[#00D395]/20 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ffffff] to-[#b0b0b0] text-[#0a0a0a] font-semibold text-[14px] hover:shadow-lg hover:shadow-[#b0b0b0]/20 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get Started
             <ChevronRight size={16} />

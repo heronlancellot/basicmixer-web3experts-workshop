@@ -19,7 +19,7 @@ export const TabButton = memo(function TabButton({
       onClick={onClick}
       className={cn(
         'flex-1 px-6 py-5 sm:py-6 text-[14px] sm:text-[15px] font-semibold transition-all duration-200 relative cursor-pointer hover:bg-opacity-20',
-        isActive ? 'text-[#00FFB3]' : 'text-[#666666] hover:text-[#888888]'
+        isActive ? 'text-[#ffffff]' : 'text-[#666666] hover:text-[#888888]'
       )}
     >
       <span className="flex items-center justify-center gap-3">
@@ -27,7 +27,7 @@ export const TabButton = memo(function TabButton({
         {label}
       </span>
       {isActive && (
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00FFB3]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#ffffff]" />
       )}
     </button>
   )

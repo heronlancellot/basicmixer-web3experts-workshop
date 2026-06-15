@@ -151,8 +151,8 @@ export function DepositButton() {
     <div className="flex flex-col gap-4 sm:gap-5 flex-1">
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2">
-          <Icon name="shield" size={14} color="#00FFB3" className="flex-shrink-0" />
-          <h4 className="text-[11px] sm:text-[12px] font-semibold text-[#00FFB3] uppercase tracking-wider">
+          <Icon name="shield" size={14} color="#ffffff" className="flex-shrink-0" />
+          <h4 className="text-[11px] sm:text-[12px] font-semibold text-[#ffffff] uppercase tracking-wider">
             How it Works
           </h4>
         </div>

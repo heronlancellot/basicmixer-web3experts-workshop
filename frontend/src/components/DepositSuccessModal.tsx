@@ -38,7 +38,7 @@ export function DepositSuccessModal({ isOpen, onClose, encodedData }: DepositSuc
       <div
         className="card-flat max-w-[520px] w-full max-h-[90vh] overflow-auto animate-in zoom-in-95 duration-300"
         style={{
-          boxShadow: '0 25px 50px -12px rgba(0, 211, 149, 0.25), 0 0 0 1px rgba(0, 255, 179, 0.08)',
+          boxShadow: '0 25px 50px -12px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.06)',
         }}
       >
         {/* Header */}
@@ -80,7 +80,7 @@ export function DepositSuccessModal({ isOpen, onClose, encodedData }: DepositSuc
             <textarea
               readOnly
               value={encodedData}
-              className="input min-h-[100px] font-mono text-[11px] sm:text-[12px] resize-y leading-relaxed text-[#00FFB3] break-all"
+              className="input min-h-[100px] font-mono text-[11px] sm:text-[12px] resize-y leading-relaxed text-[#ffffff] break-all"
               onClick={(e) => (e.target as HTMLTextAreaElement).select()}
             />
           </div>
@@ -107,7 +107,7 @@ export function DepositSuccessModal({ isOpen, onClose, encodedData }: DepositSuc
             </p>
           )}
           {copySuccess && (
-            <p className="text-[11px] text-[#00FFB3] text-center flex items-center justify-center gap-1.5">
+            <p className="text-[11px] text-[#ffffff] text-center flex items-center justify-center gap-1.5">
               <Icon name="check" size={11} />
               Code saved! You can now close this window
             </p>

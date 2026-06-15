@@ -11,17 +11,17 @@ function App() {
         toastOptions={{
           duration: 4000,
           style: {
-            background: '#141414',
+            background: '#111111',
             color: '#888888',
-            border: '1px solid rgba(0, 211, 149, 0.2)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '12px',
             padding: '16px',
-            fontFamily: "Sora, sans-serif",
+            fontFamily: "Inter, sans-serif",
           },
           success: {
             iconTheme: {
-              primary: '#00FFB3',
-              secondary: '#141414',
+              primary: '#ffffff',
+              secondary: '#111111',
             },
           },
           error: {

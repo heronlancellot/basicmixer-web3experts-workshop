@@ -49,7 +49,7 @@ export const TheHeaderMobile: React.FC<TheHeaderMobileProps> = ({
                             <a
                                 key={link.label}
                                 href={link.href ?? link.externalPage}
-                                className="text-[13px] sm:text-[14px] text-[#888888] hover:text-[#00FFB3] transition-colors duration-200"
+                                className="nav-link text-[13px] sm:text-[14px] text-[#888888] hover:text-white transition-colors duration-200"
                                 target={link.externalPage ? '_blank' : "_self"}
                                 rel='noopener noreferrer'
                             >

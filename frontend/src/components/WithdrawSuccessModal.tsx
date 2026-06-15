@@ -31,7 +31,7 @@ export function WithdrawSuccessModal({ isOpen, onClose, transactionHash, recipie
       <div
         className="card-flat max-w-[520px] w-full max-h-[90vh] overflow-auto animate-in zoom-in-95 duration-300"
         style={{
-          boxShadow: '0 25px 50px -12px rgba(0, 211, 149, 0.25), 0 0 0 1px rgba(0, 255, 179, 0.08)',
+          boxShadow: '0 25px 50px -12px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.06)',
         }}
       >
         {/* Header */}
@@ -53,9 +53,9 @@ export function WithdrawSuccessModal({ isOpen, onClose, transactionHash, recipie
         {/* Content */}
         <div className="p-6 sm:p-7 flex flex-col gap-5">
           {/* Success message */}
-          <div className="flex flex-col gap-3 p-4 rounded-lg bg-[#00FFB3]/5 border border-[#00FFB3]/15">
+          <div className="flex flex-col gap-3 p-4 rounded-lg bg-[#ffffff]/5 border border-[#ffffff]/15">
             <div className="flex items-start gap-3">
-              <span className="text-[#00FFB3] text-[14px] flex-shrink-0 mt-0.5">✓</span>
+              <span className="text-[#ffffff] text-[14px] flex-shrink-0 mt-0.5">✓</span>
               <p className="text-[12px] sm:text-[13px] text-[#888888] leading-relaxed">
                 Your withdrawal has been successfully processed.
               </p>
@@ -67,7 +67,7 @@ export function WithdrawSuccessModal({ isOpen, onClose, transactionHash, recipie
                 Recipient Address
               </span>
               <div className='flex gap-2 items-center'>
-                <code className="text-[11px] text-[#00FFB3] font-mono break-all">
+                <code className="text-[11px] text-[#ffffff] font-mono break-all">
                   {recipientAddress}
                 </code>
                 <CopyAndPasteButton textToCopy={recipientAddress} />
@@ -82,7 +82,7 @@ export function WithdrawSuccessModal({ isOpen, onClose, transactionHash, recipie
           </Button>
 
           {/* Close message */}
-          <p className="text-[11px] text-[#00FFB3] text-center flex items-center justify-center gap-1.5">
+          <p className="text-[11px] text-[#ffffff] text-center flex items-center justify-center gap-1.5">
             <Icon name="check" size={11} />
             Transaction confirmed on blockchain
           </p>

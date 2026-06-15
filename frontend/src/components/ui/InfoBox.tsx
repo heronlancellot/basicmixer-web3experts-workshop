@@ -10,8 +10,8 @@ interface InfoBoxProps {
 }
 
 const variantStyles = {
-  default: 'bg-[#00D395]/5 border-[#00D395]/15',
-  success: 'bg-[#00D395]/10 border-[#00D395]/30',
+  default: 'bg-[#ffffff]/5 border-[#ffffff]/15',
+  success: 'bg-[#ffffff]/10 border-[#ffffff]/30',
   warning: 'bg-[#FFB800]/10 border-[#FFB800]/30',
   error: 'bg-red-500/10 border-red-500/30',
 }

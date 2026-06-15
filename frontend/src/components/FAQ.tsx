@@ -168,7 +168,7 @@ const FAQItem = ({ id, question, answer, isOpen, onToggle }: FAQItemProps) => {
                 onClick={() => onToggle(id)}
                 className="w-full flex items-center justify-between gap-4 px-4 py-3 text-left cursor-pointer group"
             >
-                <span className="text-[12px] sm:text-[13px] font-medium text-white group-hover:text-[#00FFB3]">
+                <span className="text-[12px] sm:text-[13px] font-medium text-white group-hover:text-[#ffffff]">
                     {question}
                 </span>
 
@@ -206,8 +206,8 @@ export const FAQList = () => {
             {/* Header */}
             <div className="flex flex-col gap-3 items-center">
                 <div className="flex items-center gap-2">
-                    <Icon name="shield" size={16} color="#00FFB3" />
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#00FFB3]">
+                    <Icon name="shield" size={16} color="#ffffff" />
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#ffffff]">
                         FAQ
                     </span>
                 </div>

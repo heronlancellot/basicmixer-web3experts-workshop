@@ -21,7 +21,7 @@ export const Footer = memo(function Footer() {
       <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
         <FooterLogo />
         <div className='flex gap-2 items-center'>
-          <GithubIcon className='text-[#666666] hover:text-[#00FFB3] cursor-pointer transition-colors duration-300 ease-in-out ' onClick={() => {
+          <GithubIcon className='text-[#666666] hover:text-white cursor-pointer transition-colors duration-300 ease-in-out ' onClick={() => {
             window.open(
               "https://github.com/neylanxyz/basicmixer/blob/main",
               "_blank",
@@ -35,10 +35,10 @@ export const Footer = memo(function Footer() {
               "noreferrer noopener"
             )
           }} >
-            <XLogo className='text-[#666666] size-6 hover:text-[#00FFB3] cursor-pointer transition-colors duration-300 ease-in-out ' />
+            <XLogo className='text-[#666666] size-6 hover:text-white cursor-pointer transition-colors duration-300 ease-in-out ' />
           </button>
           <div className="text-[13px] sm:text-[14px] text-[#666666]">
-            Powered by <span className="text-[#00FFB3] cursor-pointer hover:text-[#00FFB3]/75" onClick={() => {
+            Powered by <span className="text-[#888888] cursor-pointer hover:text-white" onClick={() => {
               window.open(
                 "https://ethereum.org/",
                 "_blank",

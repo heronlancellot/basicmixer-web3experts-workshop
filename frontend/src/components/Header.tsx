@@ -12,7 +12,7 @@ const Logo = memo(function Logo() {
       </div>
       <div className="flex items-center gap-2 sm:gap-3">
         <h1 className="text-lg sm:text-xl font-bold text-white">{APP_NAME}</h1>
-        <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider bg-[#00FFB3]/10 text-[#00FFB3] rounded">
+        <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider bg-white/10 text-white/60 rounded">
           BETA
         </span>
       </div>
@@ -27,7 +27,7 @@ const Navigation = memo(function Navigation() {
         <a
           key={link.label}
           href={link.href ?? link.externalPage}
-          className="text-[13px] sm:text-[14px] text-[#888888] hover:text-[#00FFB3] transition-colors duration-200"
+          className="nav-link text-[13px] sm:text-[14px] text-[#888888] hover:text-white transition-colors duration-200"
           target={link.externalPage ? '_blank' : "_self"}
           rel='noopener noreferrer'
         >
@@ -42,7 +42,7 @@ export const Header = memo(function Header() {
 
   return (
     <header
-      className={`flex flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 py-6 sm:py-8 border-b border-white/5 bg-[#0a0a0a]/60 backdrop-blur-xl ${containerPadding}`}
+      className={`flex flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 py-8 sm:py-10 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-sm ${containerPadding}`}
     >
       <button onClick={() => {
         window.open("/", "_self", "noreferrer noopener")
