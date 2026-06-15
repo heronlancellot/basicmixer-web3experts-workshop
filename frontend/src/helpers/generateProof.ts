@@ -31,8 +31,8 @@ import initACVM from "@noir-lang/acvm_js";
 import acvm from "@noir-lang/acvm_js/web/acvm_js_bg.wasm?url";
 import noirc from "@noir-lang/noirc_abi/web/noirc_abi_wasm_bg.wasm?url";
 // ⚠️ IMPORTANTE: Importa o circuito compilado pelo Nargo
-// Este arquivo e gerado com: nargo compile (no diretorio circuits/swirlpool)
-import circuitData from "../../../circuits/swirlpool/target/basicmixer.json";
+// Este arquivo e gerado com: nargo compile (no diretorio circuits/basicmixer)
+import circuitData from "../../../circuits/basicmixer/target/basicmixer.json";
 import { toHex } from "viem";
 
 interface ProofInputs {

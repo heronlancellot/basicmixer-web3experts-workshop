@@ -14,7 +14,7 @@ Workshop pratico de ~2 horas para construir e deployar um **privacy pool** compl
 ## Estrutura do Repositorio
 
 ```
-swirl-workshop/
+basicmixer-workshop/
 ├── contracts/          # Smart contract principal (Solidity)
 ├── circuits/           # Circuito ZK (Noir)
 ├── helpers/            # Contratos auxiliares (BytecodeDeployer)

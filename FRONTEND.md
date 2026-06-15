@@ -224,7 +224,7 @@ O componente consome o hook e renderiza:
 
 ```
 1. Inicializa WASM (Noir + ACVM)
-2. Carrega circuito compilado (swirl.json)
+2. Carrega circuito compilado (basicmixer.json)
 3. Inicializa Barretenberg (motor criptografico)
 4. Gera witness (executa circuito com inputs)
 5. Gera prova UltraHonk (~10-30 segundos)

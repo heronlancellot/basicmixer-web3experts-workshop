@@ -46,7 +46,7 @@ WITHDRAW:
 
 ### O que e o circuito?
 
-O circuito Noir (`circuits/swirlpool/src/main.nr`) define **o que a prova ZK verifica**:
+O circuito Noir (`circuits/basicmixer/src/main.nr`) define **o que a prova ZK verifica**:
 
 1. O usuario conhece um `secret` e `nullifier` que geram um `commitment`
 2. Esse `commitment` pertence a Merkle Tree (verificado via `merkle_path`)
@@ -59,13 +59,13 @@ O circuito Noir (`circuits/swirlpool/src/main.nr`) define **o que a prova ZK ver
 - `root` (raiz da Merkle Tree)
 - `nullifier_hash` (Poseidon(nullifier, 0))
 
-> Abra o arquivo `circuits/swirlpool/src/main.nr` e leia os comentarios didaticos.
+> Abra o arquivo `circuits/basicmixer/src/main.nr` e leia os comentarios didaticos.
 
 ### Compilar
 
 ```bash
 # 1. Entrar no diretorio do circuito
-cd circuits/swirlpool
+cd circuits/basicmixer
 
 # 2. Validar o circuito (verifica sintaxe e tipos)
 nargo check
@@ -74,13 +74,13 @@ nargo check
 nargo execute
 
 # 4. Gerar a verification key
-bb write_vk -b ./target/swirl.json -o ./target --oracle_hash keccak
+bb write_vk -b ./target/basicmixer.json -o ./target --oracle_hash keccak
 
 # 5. Gerar o contrato Solidity verificador
 bb write_solidity_verifier -k ./target/vk -o ./target/Verifier.sol
 ```
 
-**Resultado:** `circuits/swirlpool/target/Verifier.sol` - contrato Solidity que verifica provas ZK.
+**Resultado:** `circuits/basicmixer/target/Verifier.sol` - contrato Solidity que verifica provas ZK.
 
 > Este `Verifier.sol` sera deployado no proximo passo.
 
@@ -101,7 +101,7 @@ O deploy tem 3 etapas, nesta ordem (cada contrato depende do anterior):
 ### 2.1 Deploy do Verifier
 
 1. Abra o [Remix IDE](https://remix.ethereum.org)
-2. Crie um arquivo `Verifier.sol` e cole o conteudo de `circuits/swirlpool/target/Verifier.sol`
+2. Crie um arquivo `Verifier.sol` e cole o conteudo de `circuits/basicmixer/target/Verifier.sol`
 3. Compile com Solidity 0.8.31 (100 optimization runs recomendado)
 4. Deploy na Sepolia (Injected Provider - MetaMask)
 5. **Anote o endereco** do Verifier deployado
