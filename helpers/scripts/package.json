@@ -4,6 +4,7 @@
   "description": "",
   "main": "getPoseidonBytecode.js",
   "scripts": {
+    "proof": "node read_proof.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
