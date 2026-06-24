@@ -119,11 +119,11 @@ export async function generateProof(proofInputs: ProofInputs): Promise<Generated
     // E o "backend" que faz a matematica pesada da prova.
     // Desenvolvido pela Aztec, implementa o sistema UltraHonk.
     console.log("Inicializando Barretenberg...");
-    await Barretenberg.new({ threads: navigator.hardwareConcurrency || 1 });
+    const api = await Barretenberg.new({ threads: navigator.hardwareConcurrency || 1 });
 
     // PASSO 5: Inicializar backend UltraHonk
     console.log("Inicializando backend UltraHonk...");
-    const backend = new UltraHonkBackend(circuit.bytecode);
+    const backend = new UltraHonkBackend(circuit.bytecode, api);
 
     // PASSO 6: Gerar witness
     // 🔑 CONCEITO: Witness
@@ -138,13 +138,13 @@ export async function generateProof(proofInputs: ProofInputs): Promise<Generated
     // Esta e a parte mais pesada (~10-30s).
     // keccakZK: true → usa keccak para compatibilidade com Solidity
     console.log("\nGerando proof ZK...");
-    const proof = await backend.generateProof(witness, { keccakZK: true });
+    const proof = await backend.generateProof(witness, { verifierTarget: 'evm' });
 
     // PASSO 8: Verificar prova localmente (sanity check)
     // Verificamos antes de enviar ao contrato para evitar gastar gas
     // em uma prova invalida.
     console.log("\nVerificando proof localmente...");
-    const isValid = await backend.verifyProof(proof, { keccakZK: true });
+    const isValid = await backend.verifyProof(proof, { verifierTarget: 'evm' });
     console.log(`✓ Proof e ${isValid ? "VALIDA" : "INVALIDA"}`);
 
     if (!isValid) {

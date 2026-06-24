@@ -23,7 +23,7 @@ export default function ProofComponent() {
     const [isInitializing, setIsInitializing] = useState(true);
     const [proofResult, setProofResult] = useState<{ proof: string, publicInputs: any } | null>(null);
     const [errorMsg, setErrorMsg] = useState("");
-    const TEST_CONTRACT_ADDRESS = "0xa1fcC0Ac35C469924aB9DB667802f479398aE6c6"
+    const TEST_CONTRACT_ADDRESS = "0xE6e49F098D2E530e90c006A25365F1BC32b8de90"
     const ABI_TEST_CONTRACT = [
         {
             "inputs": [],
@@ -176,7 +176,7 @@ export default function ProofComponent() {
             const api = await Barretenberg.new({ threads: navigator.hardwareConcurrency || 1 });
 
             console.log("Inicializando backend...", api);
-            const backend = new UltraHonkBackend(circuit.bytecode);
+            const backend = new UltraHonkBackend(circuit.bytecode, api);
 
             // Gere o witness
             console.log("Gerando witness...", backend);
@@ -185,13 +185,13 @@ export default function ProofComponent() {
 
             // Gere a proof 
             console.log("Gerando proof...", typeof witness);
-            const proof = await backend.generateProof(witness, { keccakZK: true });
+            const proof = await backend.generateProof(witness, { verifierTarget: 'evm' });
             console.log("Proof gerada:", typeof proof);
             console.log("prooof", proof)
 
             // Verificar a proof
             console.log("Verificando proof...");
-            const isValid = await backend.verifyProof(proof, { keccakZK: true });
+            const isValid = await backend.verifyProof(proof, { verifierTarget: 'evm' });
             console.log("proof = ", proof)
             console.log(`Proof é ${isValid ? "válida" : "inválida"}`);
 

@@ -553,4 +553,4 @@ export const BASIC_MIXER_ABI = [
 ] as const;
 
 // ⚠️ IMPORTANTE: Atualize este endereco se voce deployou um novo contrato!
-export const BASIC_MIXER_ADDRESS = "0xDAfA37E8DA60c00F689e70fefcD06EdC1C4dACbe" as Address;
+export const BASIC_MIXER_ADDRESS = "0x1EA78439445CA15FDbE6F80d6F2B71E81b560701" as Address;

@@ -12,11 +12,11 @@
     "refresh:deposits": "node indexer/scripts/refresh-deposits.js"
   },
   "dependencies": {
-    "@aztec/bb.js": "3.0.0-nightly.20251104",
+    "@aztec/bb.js": "5.0.0-nightly.20260324",
     "@metamask/sdk": "^0.33.1",
-    "@noir-lang/acvm_js": "1.0.0-beta.17",
-    "@noir-lang/noir_js": "1.0.0-beta.17",
-    "@noir-lang/noirc_abi": "1.0.0-beta.17",
+    "@noir-lang/acvm_js": "1.0.0-beta.21",
+    "@noir-lang/noir_js": "1.0.0-beta.21",
+    "@noir-lang/noirc_abi": "1.0.0-beta.21",
     "@rainbow-me/rainbowkit": "^2.2.10",
     "@tanstack/react-query": "^5.90.16",
     "@types/circomlibjs": "^0.1.6",
