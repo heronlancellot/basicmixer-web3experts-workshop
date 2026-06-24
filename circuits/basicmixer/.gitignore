@@ -1,0 +1,8 @@
+# Witness file — contains solved private inputs, regenerated per run
+target/*.gz
+
+# Proof artifacts — generated per run, version-specific
+target/proof
+target/public_inputs
+target/vk
+target/vk_hash

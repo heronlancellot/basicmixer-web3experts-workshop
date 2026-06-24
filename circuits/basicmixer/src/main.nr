@@ -1,10 +1,10 @@
 // ============================================================
-// 📖 WORKSHOP: Circuito Noir - Prova de Conhecimento Zero
+// WORKSHOP: Circuito Noir - Prova de Conhecimento Zero
 // ============================================================
 // Este e o circuito ZK (Zero-Knowledge) do BasicMixer.
 // Ele e compilado para WASM e roda NO BROWSER do usuario.
 //
-// 🔑 CONCEITO: O que e uma prova ZK?
+// CONCEITO: O que e uma prova ZK?
 // Uma prova de conhecimento zero permite provar que voce SABE
 // algo, sem revelar O QUE voce sabe.
 //
@@ -17,11 +17,11 @@
 // ligar o saque ao deposito original.
 // ============================================================
 
-// 💡 DICA: Poseidon BN254
+// DICA: Poseidon BN254
 // Importamos a implementacao de Poseidon para a curva BN254.
 // E a mesma funcao de hash usada no contrato Solidity.
 // A consistencia entre circuito e contrato e CRITICA.
-use dep::poseidon::poseidon::bn254;
+use poseidon::poseidon::bn254;
 
 // Funcao auxiliar para hashear 2 campos com Poseidon
 // Usada tanto para criar commitments quanto para construir a Merkle Tree.
@@ -30,14 +30,14 @@ fn hash2(left: Field, right: Field) -> Field {
 }
 
 // ============================================================
-// 📖 WORKSHOP: Funcao Principal do Circuito
+// WORKSHOP: Funcao Principal do Circuito
 // ============================================================
 // Esta funcao define O QUE a prova ZK verifica.
 // O compilador Noir transforma isso em um circuito aritmetico
 // que pode ser provado/verificado criptograficamente.
 // ============================================================
 fn main(
-    // ⚙️ COMO FUNCIONA: Inputs Privados vs Publicos
+    // COMO FUNCIONA: Inputs Privados vs Publicos
     //
     // Inputs PRIVADOS: so o usuario conhece. NAO sao revelados
     // na blockchain. Ficam escondidos dentro da prova.
@@ -47,22 +47,22 @@ fn main(
 
     // -------- Inputs Privados (so o usuario sabe) --------
 
-    // 🔑 secret: valor aleatorio gerado no deposit.
+    // secret: valor aleatorio gerado no deposit.
     //    Junto com o nullifier, forma o commitment.
     secret: Field,
 
-    // 🔑 nullifier: valor aleatorio gerado no deposit.
+    // nullifier: valor aleatorio gerado no deposit.
     //    Seu hash e revelado publicamente no withdraw para
     //    prevenir double-spend, mas o nullifier em si fica privado.
     nullifier: Field,
 
-    // 🔑 merkle_path: os 20 "irmaos" no caminho da folha ate a raiz.
+    // merkle_path: os 20 "irmaos" no caminho da folha ate a raiz.
     //    Necessarios para reconstruir a raiz da Merkle Tree.
     //    Exemplo: se minha folha esta na posicao 5, preciso dos
     //    nos vizinhos em cada nivel para calcular a raiz.
     merkle_path: [Field; 20],
 
-    // 🔑 merkle_indices: direcao em cada nivel (0=esquerda, 1=direita).
+    // merkle_indices: direcao em cada nivel (0=esquerda, 1=direita).
     //    Indica se o no atual e filho esquerdo ou direito.
     merkle_indices: [u8; 20],
 
@@ -113,7 +113,7 @@ fn main(
     // ============================================================
     // Se a raiz que calculamos a partir do commitment bate com a
     // raiz publica, provamos que nosso commitment esta na arvore.
-    // ⚠️ IMPORTANTE: assert() faz a prova FALHAR se a condicao for falsa.
+    // IMPORTANTE: assert() faz a prova FALHAR se a condicao for falsa.
     assert(current_hash == root);
 
     // ============================================================
@@ -124,7 +124,7 @@ fn main(
     // nullifier privado. O contrato usa esse hash para prevenir
     // que o mesmo deposito seja sacado duas vezes.
     //
-    // 💡 DICA: Por que nao revelar o nullifier diretamente?
+    // DICA: Por que nao revelar o nullifier diretamente?
     // Porque alguem poderia descobrir qual commitment e nosso
     // testando todos os commitments com esse nullifier.
     // O hash unidirecional protege essa informacao.
