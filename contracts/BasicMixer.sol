@@ -39,9 +39,10 @@ pragma solidity 0.8.31;
 // - Pausable: permite pausar o contrato em emergencias
 // - Ownable: apenas o dono pode executar funcoes administrativas
 // - ReentrancyGuard: previne ataques de reentrancia em transferencias de ETH
-import "@openzeppelin/contracts/security/Pausable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.6.1/contracts/utils/Pausable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.6.1/contracts/access/Ownable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v5.6.1/contracts/utils/ReentrancyGuard.sol";
+
 
 // 🔑 CONCEITO: Interface do Verificador ZK
 // Este contrato e gerado automaticamente pelo compilador Noir/Barretenberg.
