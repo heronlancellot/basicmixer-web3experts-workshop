@@ -27,8 +27,6 @@ export const FEATURES = [
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/FAQ' },
   { label: 'Docs', externalPage: 'https://github.com/neylanxyz/basicmixer/blob/main/README.md' },
 ]
 

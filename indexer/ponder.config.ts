@@ -31,6 +31,8 @@ export default createConfig({
       rpc: process.env.PONDER_RPC_URL_11155111 || "https://rpc.sepolia.org",
       // ⚙️ Intervalo de polling: a cada 5 segundos, o Ponder verifica novos blocos
       pollingInterval: 5_000,
+      // Limita requests por segundo para nao estourar rate limit do RPC (Alchemy free tier)
+      maxRequestsPerSecond: 5,
     },
   },
 
@@ -43,11 +45,11 @@ export default createConfig({
       abi: BASIC_MIXER_ABI,
       // ⚠️ IMPORTANTE: Este e o endereco do contrato deployado.
       // Se voce deployou um novo contrato no workshop, atualize aqui!
-      address: "0xDAfA37E8DA60c00F689e70fefcD06EdC1C4dACbe",
+      address: "0x1EA78439445CA15FDbE6F80d6F2B71E81b560701",
       // 💡 DICA: startBlock e o bloco onde o contrato foi deployado.
       // O indexer comeca a escanear a partir deste bloco, evitando
       // processar milhoes de blocos anteriores desnecessariamente.
-      startBlock: 33349712,
+      startBlock: 11132386,
       // Filtramos apenas os eventos que nos interessam
       filter: [
         {
