@@ -32,8 +32,8 @@ basicmixer-workshop/
 |------------|--------|------------|
 | **Node.js** | 18+ | [nodejs.org](https://nodejs.org) |
 | **pnpm** | 8+ | `npm install -g pnpm` |
-| **Nargo** | 1.0+ | `curl -L https://raw.githubusercontent.com/noir-lang/noirup/refs/heads/main/install | bash && noirup` |
-| **Barretenberg (bb)** | - | Instalado com `bbup` (vem com noirup) |
+| **Nargo** | 1.0.0-beta.21 | `curl -L https://raw.githubusercontent.com/noir-lang/noirup/refs/heads/main/install \| bash && noirup -v 1.0.0-beta.21` |
+| **Barretenberg (bb)** | 5.0.0-nightly.20260324 | `curl -L https://raw.githubusercontent.com/AztecProtocol/aztec-packages/refs/heads/next/barretenberg/bbup/install \| bash && bbup -nv 1.0.0-beta.21` |
 | **MetaMask** | - | [metamask.io](https://metamask.io) |
 
 ### Configuracoes
