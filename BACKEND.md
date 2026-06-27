@@ -73,15 +73,15 @@ nargo check
 # 3. Executar com witness de teste (Prover.toml)
 nargo execute
 
-# 4. Gerar a verification key (--oracle_hash keccak = compativel com EVM)
-bb write_vk -b ./target/basicmixer.json -o ./target --oracle_hash keccak
+# 4. Gerar a verification key
+bb write_vk -b ./target/basicmixer.json -o ./target -t evm-no-zk
 
 # 5. Gerar o contrato Solidity verificador
-bb write_solidity_verifier -k ./target/vk -o ./target/Verifier.sol
+bb write_solidity_verifier -k ./target/vk -o ./target/Verifier.sol -t evm-no-zk
 
 # 6. (Opcional) Gerar e verificar a prova localmente antes de deployar
-bb prove -b ./target/basicmixer.json -w ./target/basicmixer.gz -o ./target --oracle_hash keccak
-bb verify -p ./target/proof -k ./target/vk --oracle_hash keccak
+bb prove -b ./target/basicmixer.json -w ./target/basicmixer.gz -o ./target -t evm-no-zk
+bb verify -p ./target/proof -k ./target/vk -i ./target/public_inputs -t evm-no-zk
 ```
 
 **Resultado:** `circuits/basicmixer/target/Verifier.sol` - contrato Solidity que verifica provas ZK.
@@ -106,7 +106,7 @@ O deploy tem 3 etapas, nesta ordem (cada contrato depende do anterior):
 
 1. Abra o [Remix IDE](https://remix.ethereum.org)
 2. Crie um arquivo `Verifier.sol` e cole o conteudo de `circuits/basicmixer/target/Verifier.sol`
-3. Compile com Solidity 0.8.31 (100 optimization runs recomendado)
+3. Compile com Solidity 0.8.31 e optimizer **habilitado** (200 runs)
 4. Deploy na Sepolia (Injected Provider - MetaMask)
 5. **Anote o endereco** do Verifier deployado
 

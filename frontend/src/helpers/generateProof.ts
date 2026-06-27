@@ -138,13 +138,13 @@ export async function generateProof(proofInputs: ProofInputs): Promise<Generated
     // Esta e a parte mais pesada (~10-30s).
     // keccakZK: true → usa keccak para compatibilidade com Solidity
     console.log("\nGerando proof ZK...");
-    const proof = await backend.generateProof(witness, { verifierTarget: 'evm' });
+    const proof = await backend.generateProof(witness, { verifierTarget: 'evm-no-zk' });
 
     // PASSO 8: Verificar prova localmente (sanity check)
     // Verificamos antes de enviar ao contrato para evitar gastar gas
     // em uma prova invalida.
     console.log("\nVerificando proof localmente...");
-    const isValid = await backend.verifyProof(proof, { verifierTarget: 'evm' });
+    const isValid = await backend.verifyProof(proof, { verifierTarget: 'evm-no-zk' });
     console.log(`✓ Proof e ${isValid ? "VALIDA" : "INVALIDA"}`);
 
     if (!isValid) {
