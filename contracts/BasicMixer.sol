@@ -5,27 +5,27 @@ pragma solidity 0.8.31;
 // 📖 WORKSHOP: BasicMixer - Contrato Principal
 // ============================================================
 // Este contrato implementa um "privacy pool" de denominacao fixa.
-// Funciona como uma "caixa preta": usuarios depositam 0.001 ETH e
-// recebem um "recibo secreto". Depois, podem sacar 0.001 ETH para
+// Funciona como uma "caixa preta": usuarios depositam 0.01 ETH e
+// recebem um "recibo secreto". Depois, podem sacar 0.01 ETH para
 // QUALQUER endereco, sem que ninguem consiga ligar o deposito
 // ao saque - gracas a provas de conhecimento zero (ZK proofs).
 //
 // Fluxo:
 //   1. DEPOSIT: usuario gera secret+nullifier localmente,
 //      calcula commitment = Poseidon(secret, nullifier),
-//      e envia o commitment + 0.001 ETH ao contrato.
+//      e envia o commitment + 0.01 ETH ao contrato.
 //   2. O contrato insere o commitment numa Merkle Tree.
 //   3. WITHDRAW: usuario gera uma prova ZK que diz:
 //      "eu conheco um secret+nullifier cujo commitment esta
 //       nesta Merkle Tree" - sem revelar QUAL commitment e.
-//   4. O contrato verifica a prova e envia 0.001 ETH ao destinatario.
+//   4. O contrato verifica a prova e envia 0.01 ETH ao destinatario.
 // ============================================================
 
 /**
  * =================================================
  * PRIVATE ETH POOL (POSEIDON)
  * =================================================
- * - Fixed denomination: 0.001 ETH (for testing purposes)
+ * - Fixed denomination: 0.01 ETH (for testing purposes)
  * - Commit / Withdraw model
  * - Poseidon-based Merkle Tree (BN254)
  * - Nullifiers to prevent double spending
@@ -107,12 +107,12 @@ contract BasicMixer is Pausable, Ownable, ReentrancyGuard {
     //////////////////////////////////////////////////////////////*/
 
     // 🔑 CONCEITO: Denominacao Fixa
-    // TODOS os depositos sao do MESMO valor (0.001 ETH).
+    // TODOS os depositos sao do MESMO valor (0.01 ETH).
     // Isso e essencial para privacidade: se depositos tivessem valores
-    // diferentes, seria facil rastrear "quem depositou 0.0013 ETH e
-    // depois sacou 0.0013 ETH". Com valor fixo, todos os depositos
+    // diferentes, seria facil rastrear "quem depositou 0.013 ETH e
+    // depois sacou 0.013 ETH". Com valor fixo, todos os depositos
     // sao indistinguiveis.
-    uint256 public constant DENOMINATION = 0.001 ether;
+    uint256 public constant DENOMINATION = 0.01 ether;
 
     // 🔑 CONCEITO: Profundidade da Merkle Tree
     // Uma arvore binaria de profundidade 20 suporta 2^20 = 1.048.576 folhas.
@@ -267,7 +267,7 @@ contract BasicMixer is Pausable, Ownable, ReentrancyGuard {
     // O usuario, no frontend:
     //   1. Gera um "secret" e um "nullifier" aleatorios
     //   2. Calcula commitment = Poseidon(secret, nullifier)
-    //   3. Chama deposit(commitment) enviando 0.001 ETH
+    //   3. Chama deposit(commitment) enviando 0.01 ETH
     //
     // O contrato:
     //   1. Valida o valor enviado e que o endereco nao esta bloqueado
@@ -291,7 +291,7 @@ contract BasicMixer is Pausable, Ownable, ReentrancyGuard {
         // Verifica se o endereco nao esta na blacklist
         require(!isBlacklisted[msg.sender], "this address is blacklisted and cannot deposit");
 
-        // O usuario deve enviar exatamente DENOMINATION (0.001 ETH)
+        // O usuario deve enviar exatamente DENOMINATION (0.01 ETH)
         if (msg.value != DENOMINATION) revert InvalidDenomination();
         if (nextIndex >= MAX_LEAVES) revert TreeIsFull();
 
@@ -358,7 +358,7 @@ contract BasicMixer is Pausable, Ownable, ReentrancyGuard {
     //   2. Verifica que a raiz e conhecida (historico de raizes)
     //   3. Verifica a prova ZK via o contrato Verifier
     //   4. Marca o nullifier como usado
-    //   5. Envia 0.001 ETH ao destinatario
+    //   5. Envia 0.01 ETH ao destinatario
     //
     // ⚠️ IMPORTANTE: A prova ZK NUNCA revela qual commitment e do usuario!
     // Ela apenas prova que EXISTE um commitment valido na arvore.
@@ -399,7 +399,7 @@ contract BasicMixer is Pausable, Ownable, ReentrancyGuard {
         // Marca o nullifier como usado (previne double-spend)
         nullifierHashes[nullifierHash] = true;
 
-        // Transfere 0.001 ETH ao destinatario
+        // Transfere 0.01 ETH ao destinatario
         (bool ok,) = recipient.call{value: DENOMINATION}("");
         require(ok, "ETH transfer failed");
 

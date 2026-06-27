@@ -5,7 +5,7 @@
 // a interacao do usuario com o fluxo de deposit.
 //
 // ⚙️ COMO FUNCIONA:
-// 1. Usuario clica "Deposit 0.001 ETH"
+// 1. Usuario clica "Deposit 0.01 ETH"
 // 2. handleDeposit() e chamado:
 //    a. Gera secret + nullifier aleatorios
 //    b. Calcula commitment = Poseidon(secret, nullifier)
@@ -50,7 +50,7 @@ function textDepositLabels({ step }: { step: DepositStep }) {
     case DepositStep.ERROR:
       return "Deposit error!"
     default:
-      return "Deposit 0.001 ETH"
+      return "Deposit 0.01 ETH"
   }
 }
 
@@ -157,7 +157,7 @@ export function DepositButton() {
           </h4>
         </div>
         <div className="flex flex-col gap-2 text-[10px] sm:text-[11px] text-[#888888] leading-relaxed">
-          <p>• Deposit 0.001 ETH to break the on-chain link between addresses</p>
+          <p>• Deposit 0.01 ETH to break the on-chain link between addresses</p>
           <p>• Receive an encrypted note to withdraw privately later</p>
         </div>
       </div>

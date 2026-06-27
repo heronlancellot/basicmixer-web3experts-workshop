@@ -9,7 +9,7 @@
 // 🔑 CONCEITO: Fluxo do Withdraw na UI
 // - Usuario cola a nota base64 → auto-decode apos 3 segundos
 // - Opcionalmente define endereco destinatario (para privacidade)
-// - Clica "Withdraw 0.001 ETH" → executa todo o pipeline:
+// - Clica "Withdraw 0.01 ETH" → executa todo o pipeline:
 //   fetch commitments → compute Merkle → gera prova ZK → envia tx
 // - Modal de sucesso mostra o hash da transacao
 // ============================================================
@@ -45,7 +45,7 @@ function textWithdrawLabels({ step }: { step: WithdrawStep }) {
     case WithdrawStep.ERROR:
       return "Withdrawal error!"
     default:
-      return "Withdraw 0.001 ETH"
+      return "Withdraw 0.01 ETH"
   }
 }
 

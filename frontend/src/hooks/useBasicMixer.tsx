@@ -37,7 +37,7 @@ export function useBasicMixer() {
   // useReadContract chama funcoes "view" do contrato - sem custo de gas.
   // wagmi automaticamente faz cache e refetch dos dados.
 
-  // Valor fixo do deposito (0.001 ETH)
+  // Valor fixo do deposito (0.01 ETH)
   const { data: denomination } = useReadContract({
     address: BASIC_MIXER_ADDRESS,
     abi: BASIC_MIXER_ABI,
@@ -84,7 +84,7 @@ export function useBasicMixer() {
       abi: BASIC_MIXER_ABI,
       functionName: 'deposit',
       args: [commitment],
-      // ⚠️ IMPORTANTE: Envia exatamente DENOMINATION (0.001 ETH)
+      // ⚠️ IMPORTANTE: Envia exatamente DENOMINATION (0.01 ETH)
       value: denomination,
       account: address,
     });
