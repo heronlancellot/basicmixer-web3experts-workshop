@@ -80,8 +80,8 @@ bb write_vk -b ./target/basicmixer.json -o ./target --oracle_hash keccak
 bb write_solidity_verifier -k ./target/vk -o ./target/Verifier.sol
 
 # 6. (Opcional) Gerar e verificar a prova localmente antes de deployar
-bb prove -b ./target/basicmixer.json -w ./target/basicmixer.gz -o ./target
-bb verify -p ./target/proof -k ./target/vk
+bb prove -b ./target/basicmixer.json -w ./target/basicmixer.gz -o ./target --oracle_hash keccak
+bb verify -p ./target/proof -k ./target/vk --oracle_hash keccak
 ```
 
 **Resultado:** `circuits/basicmixer/target/Verifier.sol` - contrato Solidity que verifica provas ZK.
