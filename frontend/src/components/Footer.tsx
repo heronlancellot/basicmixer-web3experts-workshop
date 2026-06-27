@@ -23,7 +23,7 @@ export const Footer = memo(function Footer() {
         <div className='flex gap-2 items-center'>
           <GithubIcon className='text-[#666666] hover:text-white cursor-pointer transition-colors duration-300 ease-in-out ' onClick={() => {
             window.open(
-              "https://github.com/neylanxyz/basicmixer/blob/main",
+              "https://github.com/heronlancellot/basicmixer-web3experts-workshop",
               "_blank",
               "noreferrer noopener"
             )

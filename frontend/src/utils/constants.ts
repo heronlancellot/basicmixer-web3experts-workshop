@@ -27,7 +27,7 @@ export const FEATURES = [
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Docs', externalPage: 'https://github.com/neylanxyz/basicmixer/blob/main/README.md' },
+  { label: 'Docs', externalPage: 'https://github.com/heronlancellot/basicmixer-web3experts-workshop' },
 ]
 
 export const BREAKPOINTS = {
